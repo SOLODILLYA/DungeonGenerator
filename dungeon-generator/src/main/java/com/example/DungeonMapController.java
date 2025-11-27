@@ -2,10 +2,13 @@ package com.example;
 
 public class DungeonMapController {
     DungeonMap dungeonMap;
+    MapGenerator generator;
     public void initializeDungeonMap(int width, int height) {
         dungeonMap = new DungeonMap(width, height);
-        MapGenerator generator = new MapGenerator();
+        generator = new MapGenerator();
         generator.generateMap(dungeonMap);
+        spawnMonsters();
+        spawnItems();
     }
 
     public DungeonMap getDungeonMap() {
@@ -13,10 +16,10 @@ public class DungeonMapController {
     }
 
     public void spawnMonsters() {
-        dungeonMap.spawnMonsters();
+        generator.spawnMonsters(dungeonMap);
     }
 
     public void spawnItems() {
-        dungeonMap.spawnItems();
+        generator.spawnItems(dungeonMap);
     }
 }

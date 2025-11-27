@@ -91,4 +91,66 @@ public class MapGenerator {
                 return pos;
         }
     }
+
+    public ArrayList<Position> getPossiblePositions(DungeonMap dungeonMap) {
+        ArrayList<Position> possiblePositions = new ArrayList<Position>();
+        for (int i = 1; i < dungeonMap.width - 1; i++) {
+            for (int j = 0; j < dungeonMap.height - 2; j++) {
+                if (dungeonMap.tiles[i][j].type == TileType.FLOOR &&
+                    ((i == 0) || (dungeonMap.tiles[i - 1][j].type == TileType.FLOOR || dungeonMap.tiles[i - 1][j].type == TileType.WALL)) &&
+                    ((i == dungeonMap.width - 1) || (dungeonMap.tiles[i + 1][j].type == TileType.FLOOR || dungeonMap.tiles[i + 1][j].type == TileType.WALL)) &&
+                    ((j == 0) || (dungeonMap.tiles[i][j - 1].type == TileType.FLOOR || dungeonMap.tiles[i][j - 1].type == TileType.WALL)) &&
+                    ((j == dungeonMap.height - 1) || (dungeonMap.tiles[i][j + 1].type == TileType.FLOOR || dungeonMap.tiles[i][j + 1].type == TileType.WALL))) 
+                    {
+                    possiblePositions.add(new Position(i, j));
+                }
+            }
+        }
+        return possiblePositions;
+    }
+
+    public DungeonMap spawnMonsters(DungeonMap dungeonMap) {
+        ArrayList<Position> monsterPositions = getPossiblePositions(dungeonMap);
+        int monstersToSpawn = monsterPositions.size() / 20;
+        while (monstersToSpawn > 0 && monsterPositions.size() > 0) {
+            int index = (int) (Math.random() * monsterPositions.size());
+            Position pos = monsterPositions.get(index);
+            dungeonMap.setTile(pos, new Tile(TileType.MONSTER));
+            monsterPositions.remove(index);
+            monstersToSpawn--;
+        }
+        return dungeonMap;
+    }
+
+    public DungeonMap spawnItems(DungeonMap dungeonMap) {
+        ArrayList<Position> itemPositions = getPossiblePositions(dungeonMap);
+        int itemsToSpawn = itemPositions.size() / 10;
+        while (itemsToSpawn > 0 && itemPositions.size() > 0) {
+            int index = (int) (Math.random() * itemPositions.size());
+            Position pos = itemPositions.get(index);
+            int type = (int) (Math.random() * 4);
+            ItemType itemType;
+            switch (type) {
+                case 0:
+                    itemType = ItemType.GOLD; // GOLD
+                    break;
+                case 1:
+                    itemType = ItemType.POTION; // POTION
+                    break;
+                case 2:
+                    itemType = ItemType.KEY; // KEY
+                    break;
+                case 3:
+                    itemType = ItemType.WEAPON; // WEAPON
+                    break;
+                default:
+                    itemType = ItemType.GOLD;
+                    break;
+            }
+            dungeonMap.setTile(pos, new ItemTile(itemType));
+            itemPositions.remove(index);
+            itemsToSpawn--;
+        }
+        return dungeonMap;
+    }
 }
