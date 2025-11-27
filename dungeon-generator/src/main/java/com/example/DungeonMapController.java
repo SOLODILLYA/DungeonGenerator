@@ -15,4 +15,8 @@ public class DungeonMapController {
     public void spawnMonsters() {
         dungeonMap.spawnMonsters();
     }
+
+    public void spawnItems() {
+        dungeonMap.spawnItems();
+    }
 }

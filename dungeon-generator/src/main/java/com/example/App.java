@@ -6,6 +6,7 @@ public class App {
         DungeonMapController controller = new DungeonMapController();
         controller.initializeDungeonMap(10, 10);
         controller.spawnMonsters();
+        controller.spawnItems();
         DungeonMap dungeonMap = controller.getDungeonMap();
         System.out.println(dungeonMap.toString());
     }
