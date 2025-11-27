@@ -8,4 +8,20 @@ public class Position {
         this.x = x;
         this.y = y;
     }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof Position)) {
+            return false;
+        }
+        
+        Position pos = (Position) o;
+        
+        return Integer.compare(x, pos.x) == 0
+                && Integer.compare(y, pos.y) == 0;
+    }
 }

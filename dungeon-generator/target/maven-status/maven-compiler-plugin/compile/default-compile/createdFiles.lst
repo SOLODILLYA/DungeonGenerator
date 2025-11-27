@@ -4,6 +4,8 @@ com/example/App.class
 com/example/ItemType.class
 com/example/MapGenerator.class
 com/example/Tile.class
+com/example/MapGenerator$1.class
 com/example/DungeonMap.class
 com/example/Position.class
+com/example/Move.class
 com/example/DungeonMapController.class

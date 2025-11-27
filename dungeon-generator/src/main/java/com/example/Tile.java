@@ -8,6 +8,11 @@ public class Tile {
     }
 
     public char getType() {
+        if(type == TileType.WALL){
+            return '#';
+        }else if(type == TileType.FLOOR){
+            return '.';
+        }
         return type.toString().charAt(0);
     }
 }
