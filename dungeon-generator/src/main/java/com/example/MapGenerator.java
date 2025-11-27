@@ -10,6 +10,7 @@ public class MapGenerator {
         generateStart(dungeonMap);
         generateExit(dungeonMap);
         generatePath(dungeonMap);
+        generateRooms(dungeonMap);
     }
 
     private void generateStart(DungeonMap dungeonMap) {
@@ -25,7 +26,7 @@ public class MapGenerator {
     private void generatePath(DungeonMap dungeonMap) {
         Position currentPos = startPosition;
         while (!currentPos.equals(exitPosition)) {
-            Move[][] moves = possibleMoves(dungeonMap, currentPos);
+            Move[][] moves = getPossibleMoves(dungeonMap, currentPos);
             if (Math.random() < 0.7 && moves[0].length > 0) {
                 Move move = moves[0][(int) (Math.random() * moves[0].length)];
                 currentPos = movePosition(currentPos, move);
@@ -43,7 +44,7 @@ public class MapGenerator {
         }
     }
 
-    private Move[][] possibleMoves(DungeonMap dungeonMap, Position pos) {
+    private Move[][] getPossibleMoves(DungeonMap dungeonMap, Position pos) {
         ArrayList<Move> goodMoves = new ArrayList<Move>();
         ArrayList<Move> badMoves = new ArrayList<Move>();
         if (pos.x > 0) {
@@ -97,11 +98,17 @@ public class MapGenerator {
         for (int i = 1; i < dungeonMap.width - 1; i++) {
             for (int j = 0; j < dungeonMap.height - 2; j++) {
                 if (dungeonMap.tiles[i][j].type == TileType.FLOOR &&
-                    ((i == 0) || (dungeonMap.tiles[i - 1][j].type == TileType.FLOOR || dungeonMap.tiles[i - 1][j].type == TileType.WALL)) &&
-                    ((i == dungeonMap.width - 1) || (dungeonMap.tiles[i + 1][j].type == TileType.FLOOR || dungeonMap.tiles[i + 1][j].type == TileType.WALL)) &&
-                    ((j == 0) || (dungeonMap.tiles[i][j - 1].type == TileType.FLOOR || dungeonMap.tiles[i][j - 1].type == TileType.WALL)) &&
-                    ((j == dungeonMap.height - 1) || (dungeonMap.tiles[i][j + 1].type == TileType.FLOOR || dungeonMap.tiles[i][j + 1].type == TileType.WALL))) 
-                    {
+                        ((i == 0) || (dungeonMap.tiles[i - 1][j].type == TileType.FLOOR
+                                || dungeonMap.tiles[i - 1][j].type == TileType.WALL))
+                        &&
+                        ((i == dungeonMap.width - 1) || (dungeonMap.tiles[i + 1][j].type == TileType.FLOOR
+                                || dungeonMap.tiles[i + 1][j].type == TileType.WALL))
+                        &&
+                        ((j == 0) || (dungeonMap.tiles[i][j - 1].type == TileType.FLOOR
+                                || dungeonMap.tiles[i][j - 1].type == TileType.WALL))
+                        &&
+                        ((j == dungeonMap.height - 1) || (dungeonMap.tiles[i][j + 1].type == TileType.FLOOR
+                                || dungeonMap.tiles[i][j + 1].type == TileType.WALL))) {
                     possiblePositions.add(new Position(i, j));
                 }
             }
@@ -151,6 +158,26 @@ public class MapGenerator {
             itemPositions.remove(index);
             itemsToSpawn--;
         }
+        return dungeonMap;
+    }
+
+    public DungeonMap generateRooms(DungeonMap dungeonMap) {
+        ArrayList<Position> roomPositions = getPossiblePositions(dungeonMap);
+        int roomsToSpawn = roomPositions.size() / 7;
+        while (roomsToSpawn > 0 && roomPositions.size() > 0) {
+            int index = (int) (Math.random() * roomPositions.size());
+            Position pos = roomPositions.get(index);
+            int roomWidth = 3 + (int) (Math.random() * 5);
+            int roomHeight = 3 + (int) (Math.random() * 5);
+            for (int x = pos.x; x < pos.x + roomWidth && x < dungeonMap.width - 1; x++) {
+                for (int y = pos.y; y < pos.y + roomHeight && y < dungeonMap.height - 1; y++) {
+                    dungeonMap.setTile(new Position(x, y), new Tile(TileType.FLOOR));
+                }
+            }
+            roomPositions.remove(index);
+            roomsToSpawn--;
+        }
+
         return dungeonMap;
     }
 }

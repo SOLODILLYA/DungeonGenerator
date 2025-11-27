@@ -25,8 +25,10 @@ public class DungeonMap {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (int y = 0; y < height; y++) {
+            sb.append('|');
             for (int x = 0; x < width; x++) {
                 sb.append(tiles[x][y].getType());
+                sb.append('|');
             }
             sb.append("\n");
         }
