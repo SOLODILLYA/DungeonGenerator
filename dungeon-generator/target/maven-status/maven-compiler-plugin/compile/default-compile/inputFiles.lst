@@ -1,1 +1,6 @@
 /Users/solod/GitHub/DungeonGenerator/dungeon-generator/src/main/java/com/example/App.java
+/Users/solod/GitHub/DungeonGenerator/dungeon-generator/src/main/java/com/example/Item.java
+/Users/solod/GitHub/DungeonGenerator/dungeon-generator/src/main/java/com/example/ItemType.java
+/Users/solod/GitHub/DungeonGenerator/dungeon-generator/src/main/java/com/example/Monster.java
+/Users/solod/GitHub/DungeonGenerator/dungeon-generator/src/main/java/com/example/Position.java
+/Users/solod/GitHub/DungeonGenerator/dungeon-generator/src/main/java/com/example/TileType.java
