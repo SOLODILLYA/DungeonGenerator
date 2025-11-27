@@ -14,7 +14,9 @@ public class DungeonMap {
             }
         }
     }
-
+    public void setTile(Position pos, Tile tile) {
+        tiles[pos.x][pos.y] = tile;
+    }
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (int y = 0; y < height; y++) {

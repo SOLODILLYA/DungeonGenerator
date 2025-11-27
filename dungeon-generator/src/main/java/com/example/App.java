@@ -1,15 +1,11 @@
 package com.example;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Dungeon Generator" );
-        DungeonMap dungeonMap = new DungeonMap(10, 10);
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Dungeon Generator");
+        DungeonMapController controller = new DungeonMapController();
+        controller.initializeDungeonMap(10, 10);
+        DungeonMap dungeonMap = controller.getDungeonMap();
         System.out.println(dungeonMap.toString());
     }
 }
