@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="NL"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/24.0.1/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/solod/GitHub/DungeonGenerator/dungeon-generator/target/surefire/surefirebooter-20251127173542758_3.jar /Users/solod/GitHub/DungeonGenerator/dungeon-generator/target/surefire 2025-11-27T17-35-42_675-jvmRun1 surefire-20251127173542758_1tmp surefire_0-20251127173542758_2tmp"/>
+    <property name="sun.java.command" value="/Users/solod/GitHub/DungeonGenerator/dungeon-generator/target/surefire/surefirebooter-20251127175027764_3.jar /Users/solod/GitHub/DungeonGenerator/dungeon-generator/target/surefire 2025-11-27T17-50-27_706-jvmRun1 surefire-20251127175027764_1tmp surefire_0-20251127175027764_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/solod/GitHub/DungeonGenerator/dungeon-generator/target/test-classes:/Users/solod/GitHub/DungeonGenerator/dungeon-generator/target/classes:/Users/solod/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/solod/GitHub/DungeonGenerator/dungeon-generator/target/surefire/surefirebooter-20251127173542758_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/solod/GitHub/DungeonGenerator/dungeon-generator/target/surefire/surefirebooter-20251127175027764_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="24.0.1"/>
@@ -58,5 +58,5 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="68.0"/>
   </properties>
-  <testcase name="testApp" classname="com.example.AppTest" time="0.001"/>
+  <testcase name="testApp" classname="com.example.AppTest" time="0.002"/>
 </testsuite>

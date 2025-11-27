@@ -1,6 +1,8 @@
 com/example/TileType.class
 com/example/Monster.class
-com/example/Item.class
+com/example/ItemTile.class
 com/example/App.class
 com/example/ItemType.class
+com/example/Tile.class
+com/example/DungeonMap.class
 com/example/Position.class
