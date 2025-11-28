@@ -1,6 +1,14 @@
-package com.example;
+package com.example.generation;
 
 import java.util.ArrayList;
+
+import com.example.core.DungeonMap;
+import com.example.core.Move;
+import com.example.core.Position;
+import com.example.core.Tile;
+import com.example.core.TileType;
+import com.example.tiles.ItemTile;
+import com.example.tiles.ItemType;
 
 public class MapGenerator {
     Position startPosition = new Position(0, 0);
@@ -27,7 +35,7 @@ public class MapGenerator {
         Position currentPos = startPosition;
         while (!currentPos.equals(exitPosition)) {
             Move[][] moves = getPossibleMoves(dungeonMap, currentPos);
-            if (Math.random() < 0.7 && moves[0].length > 0) {
+            if (Math.random() < 0.6 && moves[0].length > 0) {
                 Move move = moves[0][(int) (Math.random() * moves[0].length)];
                 currentPos = movePosition(currentPos, move);
                 if (!currentPos.equals(exitPosition) && !currentPos.equals(startPosition)) {

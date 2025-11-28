@@ -1,4 +1,4 @@
-package com.example;
+package com.example.core;
 
 public class Position {
     public int x;

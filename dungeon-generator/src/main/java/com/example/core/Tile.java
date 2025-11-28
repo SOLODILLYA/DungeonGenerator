@@ -1,7 +1,7 @@
-package com.example;
+package com.example.core;
 
 public class Tile {
-    TileType type;
+    public TileType type;
 
     public Tile(TileType type) {
         this.type = type;

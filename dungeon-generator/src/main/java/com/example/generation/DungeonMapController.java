@@ -1,4 +1,6 @@
-package com.example;
+package com.example.generation;
+
+import com.example.core.DungeonMap;
 
 public class DungeonMapController {
     DungeonMap dungeonMap;

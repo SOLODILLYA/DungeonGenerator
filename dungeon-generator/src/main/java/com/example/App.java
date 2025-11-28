@@ -2,6 +2,9 @@ package com.example;
 
 import java.util.Scanner;
 
+import com.example.core.DungeonMap;
+import com.example.generation.DungeonMapController;
+
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

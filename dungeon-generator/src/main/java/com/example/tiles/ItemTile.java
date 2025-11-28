@@ -1,4 +1,7 @@
-package com.example;
+package com.example.tiles;
+
+import com.example.core.Tile;
+import com.example.core.TileType;
 
 public class ItemTile extends Tile {
     private ItemType itemType;
