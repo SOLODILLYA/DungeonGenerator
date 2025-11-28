@@ -24,3 +24,9 @@ A Java console application that creates a randomized dungeon layout. Players pro
    java -jar target/dungeon-generator-1.0-SNAPSHOT.jar
    ```
 4. When prompted, enter a dungeon width and height between 5 and 100. The application will print the generated map to the terminal.
+
+## Testing
+Run the unit tests with Maven:
+```bash
+mvn test
+```
