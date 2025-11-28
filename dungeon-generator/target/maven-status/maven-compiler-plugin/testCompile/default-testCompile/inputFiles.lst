@@ -1,1 +1,7 @@
 /Users/solod/GitHub/DungeonGenerator/dungeon-generator/src/test/java/com/example/AppTest.java
+/Users/solod/GitHub/DungeonGenerator/dungeon-generator/src/test/java/com/example/core/DungeonMapTest.java
+/Users/solod/GitHub/DungeonGenerator/dungeon-generator/src/test/java/com/example/core/PositionTest.java
+/Users/solod/GitHub/DungeonGenerator/dungeon-generator/src/test/java/com/example/core/TileTest.java
+/Users/solod/GitHub/DungeonGenerator/dungeon-generator/src/test/java/com/example/generation/DungeonMapControllerTest.java
+/Users/solod/GitHub/DungeonGenerator/dungeon-generator/src/test/java/com/example/generation/MapGeneratorTest.java
+/Users/solod/GitHub/DungeonGenerator/dungeon-generator/src/test/java/com/example/tiles/ItemTileTest.java

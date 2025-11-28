@@ -1,1 +1,7 @@
+com/example/tiles/ItemTileTest.class
+com/example/generation/MapGeneratorTest.class
 com/example/AppTest.class
+com/example/core/PositionTest.class
+com/example/core/DungeonMapTest.class
+com/example/core/TileTest.class
+com/example/generation/DungeonMapControllerTest.class
